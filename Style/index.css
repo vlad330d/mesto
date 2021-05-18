@@ -1,0 +1,24 @@
+.page {
+  margin: 0;
+  background-color: black;
+}
+
+.page__container {
+  min-width: 320px;
+  max-width: 1280px;
+  margin: 0 auto;
+  font-family: "inter", Arial, sans-serif;
+}
+
+.header {
+  margin: 0 auto;
+  padding: 45px 0 41px 0;
+  max-width: 880px;
+  border-bottom: 1px solid #545454;
+}
+
+.header__logo {
+  margin: 0;
+  width: 142px;
+  height: 33px;
+}

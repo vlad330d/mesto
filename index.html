@@ -1,12 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Инстаграм Кусто</title>
+  <link rel="stylesheet" href="./Style/index.css">
 </head>
-<body>
-    
+<body class="page">
+  <div class="page__container">
+    <header class="header">
+      <img src="./Images/Header-logo.svg" alt="Логотип" class="header__logo">
+    </header>
+    <main class="content">
+      <section class="user">
+        <img src="./Images/User.jpg" alt="Иконка Пользователя" class="user__logo">
+        <p class="user__name">Жак-Ив Кусто</p>
+        <p class="user__info">Исследователь океана</p>
+        <button class="edit-button"></button>
+        <button class="add-img-button"></button>
+      </section>
+      <section class="cards">
+        <div class="card">
+          <img src="./Images/karachaevsk.jpg" alt="фото" class="card-img">
+          <p class="card-name">Карачаевск</p>
+          <button class="like-button"></button>
+        </div>
+        <div class="card">
+          <img src="./Images/elbrus.jpg" alt="фото" class="card-img">
+          <p class="card-name">Гора Эльбрус</p>
+          <button class="like-button"></button>
+        </div>
+        <div class="card">
+          <img src="./Images/dombaj.jpg" alt="фото" class="card-img">
+          <p class="card-name">Домбай</p>
+          <button class="like-button"></button>
+        </div>
+        <div class="card">
+          <img src="./Images/karachaevsk.jpg" alt="фото" class="card-img">
+          <p class="card-name">Карачаевск</p>
+          <button class="like-button"></button>
+        </div>
+        <div class="card">
+          <img src="./Images/elbrus.jpg" alt="фото" class="card-img">
+          <p class="card-name">Гора Эльбрус</p>
+          <button class="like-button"></button>
+        </div>
+        <div class="card">
+          <img src="./Images/dombaj.jpg" alt="фото" class="card-img">
+          <p class="card-name">Домбай</p>
+          <button class="like-button"></button>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <p class="footer__copyright">© 2020 Mesto Russia</p>
+    </footer>
+  </div>
 </body>
 </html>
