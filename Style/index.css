@@ -1,3 +1,19 @@
+@import url(../Vendor/normalize.css);
+@import url(../Vendor/fonts.css);
+@import url();
+@import url();
+@import url();
+@import url();
+@import url();
+@import url();
+@import url();
+@import url();
+@import url();
+@import url();
+@import url();
+@import url();
+
+
 .page {
   margin: 0;
   background-color: black;
@@ -30,6 +46,7 @@
   display: flex;
   justify-content: space-between;
   flex-direction: row;
+  align-items: center;
 }
 
 .user__profile {
@@ -46,6 +63,7 @@
 }
 
 .user__name {
+  position: relative;
   margin: 0;
   padding-bottom: 16px;
   color: white;
@@ -61,6 +79,33 @@
   line-height: 22px;
 }
 
+.edit-button {
+  margin-left: 18px;
+  padding: 12px 12px;
+  position: absolute;
+  top: 15px;
+  background-image: url(../Images/Adit-button.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: 1px solid #FFFFFF;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+}
+
+.add-button {
+  padding: 25px 75px;
+  background-image: url(../Images/Add-button.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: 2px solid #FFFFFF;
+  width: 22px;
+  height: 22px;
+  border-radius: 2px;
+}
+
 .cards {
   max-width: 880px;
   margin: 0 auto;
@@ -71,11 +116,54 @@
 }
 
 .card {
+  margin: 0;
   max-width: 282px;
   max-height: 361px;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .card-img {
+  margin: 0;
   max-width: 282px;
   max-height: 282px;
+}
+
+.card-info {
+  margin: 0;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 79px;
+}
+
+.card-name {
+  margin: 0;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+  color: #000000;
+}
+
+.like-button {
+  background-image: url(../Images/Like-button.svg);
+  background-color: none;
+  border: none;
+  width: 22px;
+  height: 19px;
+}
+
+.footer {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 67px 0 60px 0;
+}
+
+.footer__copyright {
+  margin: 0;
+  font-size: 18px;
+  line-height: 22px;
+  color: #545454;
 }
