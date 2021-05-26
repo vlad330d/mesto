@@ -93,6 +93,11 @@
   border-radius: 2px;
 }
 
+.edit-button:hover {
+  opacity: 0.6;
+  transition: ease 0.2s;
+}
+
 .add-button {
   padding: 25px 75px;
   background-image: url(../Images/Add-button.svg);
@@ -102,6 +107,11 @@
   border: 2px solid #FFFFFF;
   background-size: 22px;
   border-radius: 2px;
+}
+
+.add-button:hover {
+  opacity: 0.6;
+  transition: ease 0.2s;
 }
 
 .cards {
@@ -149,10 +159,19 @@
 
 .like-button {
   background-image: url(../Images/Like-button.svg);
-  background-color: none;
+  background-color: transparent;
   border: none;
   width: 22px;
   height: 19px;
+}
+
+.like-button{
+  opacity: 0.5;
+  transition: ease 0.2s;
+}
+
+.like-button:active {
+  background-image: url(../Images/like-button_active.svg);
 }
 
 .footer {
@@ -224,6 +243,11 @@
   height: 50px;
 }
 
+.popup__save-button:hover {
+  opacity: 0.8;;
+  transition: ease 0.2s;
+}
+
 .popup__close-button {
   position: absolute;
   top: -40px;
@@ -234,6 +258,11 @@
   background-color: transparent;
   border: none;
   transform: rotate(45deg);
+}
+
+.popup__close-button:hover {
+  opacity: 0.6;
+  transition: ease 0.2s;
 }
 
 @media screen and (max-width: 879px) {
