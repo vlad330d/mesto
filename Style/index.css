@@ -155,14 +155,20 @@
   font-size: 24px;
   line-height: 29px;
   color: #000000;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .like-button {
   background-image: url(../Images/Like-button.svg);
+  background-position: center;
+  background-repeat: no-repeat;
   background-color: transparent;
-  border: none;
+  border: 1px solid red;
   width: 22px;
   height: 19px;
+  margin-left: 30px;
 }
 
 .like-button:hover{
@@ -197,6 +203,10 @@
   display: none;
   justify-content: center;
   align-items: center;
+}
+
+.popup_opened {
+  display: flex;
 }
 
 .popup__container {
