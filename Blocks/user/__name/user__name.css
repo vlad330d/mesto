@@ -1,0 +1,25 @@
+.user__name {
+  position: relative;
+  margin: 0;
+  padding-bottom: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 42px;
+  line-height: 48px;
+}
+
+@media screen and (max-width: 879px) {
+  .user__name {
+    font-size: 35px;
+    line-height: 39px;
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .user__name {
+    font-size: 27px;
+    line-height: 33px;
+    text-align: center;
+  }
+}

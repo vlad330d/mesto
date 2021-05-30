@@ -1,0 +1,5 @@
+.user__edit-btn-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
