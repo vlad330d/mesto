@@ -24,4 +24,4 @@ function formSubmitHandler (evt) {
    profession.textContent = jobInput.value;
 }
 
-formElement.addEventListener('submit', formSubmitHandler); 
+formElement.addEventListener('submit', formSubmitHandler);
