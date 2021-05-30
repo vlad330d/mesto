@@ -21,9 +21,6 @@ jobInput.setAttribute ("value", profession.textContent);
 
 function formSubmitHandler (evt) {
    evt.preventDefault();
-   
-   nameInput.value;
-   jobInput.value;
 
    userName.textContent = nameInput.value;
    profession.textContent = jobInput.value;
