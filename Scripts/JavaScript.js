@@ -7,21 +7,25 @@ let formElement = document.querySelector (".popup__container");
 let nameInput = document.querySelector (".popup__name");
 let jobInput = document.querySelector (".popup__profession");
 
- function toggleClass (){
-   popup.classList.toggle ("popup_opened")
+ function popupOpened (){
+    popup.classList.add ("popup_opened")
+ }
+
+ function popupClosed (){
+    popup.classList.remove ("popup_opened")
  }
  
-popupOpen.addEventListener ("click", toggleClass);
-popupClose.addEventListener ("click", toggleClass);
+popupOpen.addEventListener ("click", popupOpened);
+popupClose.addEventListener ("click", popupClosed);
 
 nameInput.setAttribute ("value", userName.textContent);
 jobInput.setAttribute ("value", profession.textContent);
 
 function formSubmitHandler (evt) {
-   evt.preventDefault();
+  evt.preventDefault();
 
-   userName.textContent = nameInput.value;
-   profession.textContent = jobInput.value;
+  userName.textContent = nameInput.value;
+  profession.textContent = jobInput.value;
 }
 
 formElement.addEventListener('submit', formSubmitHandler);
