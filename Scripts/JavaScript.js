@@ -1,36 +1,32 @@
-let popup = document.querySelector (".popup");
-let popupOpen = document.querySelector (".edit-button");
-let popupClose = document.querySelector (".popup__close-button");
-let userName = document.querySelector (".user__name");
-let profession = document.querySelector (".user__profession");
-let formElement = document.querySelector (".popup__container");
-let nameInput = document.querySelector (".popup__name");
-let jobInput = document.querySelector (".popup__profession");
+let popup = document.querySelector(".popup");
+let popupOpen = document.querySelector(".user__edit-button");
+let popupClose = document.querySelector(".popup__close-button");
+let userName = document.querySelector(".user__name");
+let profession = document.querySelector(".user__profession");
+let formElement = document.querySelector(".popup__container");
+let popupInput = document.querySelectorAll(".popup__input");
 
- function popupOpened (){
-    popup.classList.add ("popup_opened");
- }
-
- function popupClosed (){
-    popup.classList.remove ("popup_opened")
- }
-
- function refresh (){
-    nameInput.value = userName.textContent;
-    jobInput.value = profession.textContent;
+function popupOpened (){
+  popup.classList.add ("popup_opened");
+  popupInput[0].value = userName.textContent;
+  popupInput[1].value = profession.textContent;
 }
 
-nameInput.setAttribute ("value", userName.textContent);
-jobInput.setAttribute ("value", profession.textContent);
+function popupClosed (){
+  popup.classList.remove ("popup_opened")
+}
 
-function formSubmitHandler (evt) {
+popupInput[0].setAttribute("value", userName.textContent);
+popupInput[1].setAttribute("value", profession.textContent);
+
+function formSubmitHandler(evt) {
   evt.preventDefault();
 
-  userName.textContent = nameInput.value;
-  profession.textContent = jobInput.value;
+  userName.textContent = popupInput[0].value;
+  profession.textContent = popupInput[1].value;
+  popupClosed();
 }
 
-popupOpen.addEventListener ("click", popupOpened);
-popupClose.addEventListener ("click", popupClosed);
-popupOpen.addEventListener ("click", refresh);
+popupOpen.addEventListener("click", popupOpened);
+popupClose.addEventListener("click", popupClosed);
 formElement.addEventListener('submit', formSubmitHandler);
