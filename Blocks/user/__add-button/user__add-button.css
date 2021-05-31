@@ -1,6 +1,6 @@
-.add-button {
+.user__add-button {
   padding: 25px 75px;
-  background-image: url(../../Images/Add-button.svg);
+  background-image: url(../../../Images/Add-button.svg);
   background-position: center;
   background-repeat: no-repeat;
   background-color: transparent;
@@ -9,19 +9,19 @@
   border-radius: 2px;
 }
 
-.add-button:hover {
+.user__add-button:hover {
   opacity: 0.6;
   transition: ease 0.2s;
 }
 
 @media screen and (max-width: 879px) {
-  .add-button {
+  .user__add-button {
     padding: 25px 141px;
   }
 }
 
 @media screen and (max-width: 400px) {
-  .add-button {
+  .user__add-button {
     background-size: 16px;
   }
 }
