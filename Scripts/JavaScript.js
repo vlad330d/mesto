@@ -30,3 +30,11 @@ function formSubmitHandler(evt) {
 popupOpen.addEventListener("click", popupOpened);
 popupClose.addEventListener("click", popupClosed);
 formElement.addEventListener('submit', formSubmitHandler);
+
+
+/*      
+
+      половина ошибок по невнимательности, прошу понять и простить растяпу 💐😇😋 
+      p.s это сообщение не попытка задобрить 😂😂
+
+*/

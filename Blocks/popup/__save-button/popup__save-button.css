@@ -5,6 +5,8 @@
   width: 85%;
   max-width: 358px;
   height: 50px;
+  border: none;
+  border-radius: 2px;
 }
 
 .popup__save-button:hover {
