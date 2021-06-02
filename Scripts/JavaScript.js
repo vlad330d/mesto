@@ -4,8 +4,8 @@ let popupClose = document.querySelector(".popup__close-button");
 let userName = document.querySelector(".user__name");
 let profession = document.querySelector(".user__profession");
 let formElement = document.querySelector(".popup__container");
-let popupName = document.querySelector(".popup_name");
-let popupProfession = document.querySelector(".popup_profession");
+let popupName = document.querySelector(".input_name");
+let popupProfession = document.querySelector(".input_profession");
 
 
 function popupOpened (){
