@@ -27,3 +27,29 @@
 @import url(../Blocks/popup/__input/popup__input.css);
 @import url(../Blocks/popup/__container/popup__container.css);
 @import url(../Blocks/popup/__close-button/popup__close-button.css);
+
+
+.popup__input::placeholder {
+  font-size: 14px;
+  line-height: 17px;
+  color: #C4C4C4;
+}
+
+.card__trash-button {
+  position: absolute;
+  top: 18px;
+  right: 15px;
+  background-image: url(../Images/Trash.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+  width: 18px;
+  height: 19px;
+  padding: 0;
+}
+
+.card__trash-button:hover {
+  opacity: 0.5;
+  transition: ease 0.2s;
+}
