@@ -27,6 +27,7 @@
 @import url(../Blocks/popup/__input/popup__input.css);
 @import url(../Blocks/popup/__container/popup__container.css);
 @import url(../Blocks/popup/__close-button/popup__close-button.css);
+@import url(../Blocks/card/__like-button/_active/card__like-button_active.css);
 
 
 .popup__input::placeholder {
@@ -52,4 +53,33 @@
 .card__trash-button:hover {
   opacity: 0.5;
   transition: ease 0.2s;
+}
+
+.popup__container_fullscreen-picture {
+  width: auto;
+  max-width: none;
+  height: auto;
+  background: none;
+  border-radius: 0;
+}
+
+.popup__fullscreen-img {
+  max-width: 75vw;
+  max-height: 75vh;
+  display: block;
+}
+
+.popup_fullscreen-picture {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.popup__pictire-container {
+  margin: 0 auto;
+}
+
+.popup__picture-title {
+  margin: 10px 0 0;
+  font-size: 12px;
+  line-height: 14.5px;
+  color: white;
 }

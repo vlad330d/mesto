@@ -11,7 +11,7 @@
     <header class="header">
       <img src="./Images/Header-logo.svg" alt="Логотип" class="header__logo">
     </header>
-    <main class="content">
+    < class="content">
       <section class="user">
         <div class="user__profile">
           <img src="./Images/User.jpg" alt="Иконка Пользователя" class="user__avatar">
@@ -46,6 +46,15 @@
           <button type="submit" class="popup__save-button">Создать</button>
         </form>
       </section>
+      <section class="popup popup_fullscreen-picture">
+        <div class="popup__container popup__container_fullscreen-picture">
+          <button type="button" class="popup__close-button popup__close-button_img" aria-label="закртыть попап"></button>
+          <div class="popup__pictire-container">
+            <img class="popup__fullscreen-img" src="" alt="">
+            <p class="popup__picture-title">горный</p>
+          </div>
+        </div>
+      </section>
     </main>
     <footer class="footer">
       <p class="footer__copyright">© 2020 Mesto Russia</p>
@@ -53,7 +62,7 @@
   </div>
   <template class="card-template">
     <div class="card">
-      <img src="" alt="фото" class="card__img">
+      <img src="" alt="" class="card__img">
       <button type="button" class="card__trash-button" aria-label="удалить карточку"></button>
       <div class="card__info">
         <p class="card__name"></p>

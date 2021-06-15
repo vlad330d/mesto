@@ -98,7 +98,6 @@ const initialCards = [
 
 let cardTemplate = document.querySelector(".card-template").content;
 let cards = document.querySelector(".cards");
-let deleteButton = cardTemplate.querySelector(".card__trash-button");
 
 function renderCards(){
   initialCards.forEach(renderCard);
@@ -106,11 +105,41 @@ function renderCards(){
 
 function renderCard(initialCards){
   let cardElement = cardTemplate.cloneNode(true);
+  let deleteButton = cardElement.querySelector(".card__trash-button");
+  let likeBtn = cardElement.querySelector(".card__like-button");
+  let card = document.querySelector(".card");
 
   cardElement.querySelector(".card__name").textContent = initialCards.name;
   cardElement.querySelector(".card__img").src = initialCards.link;
+  cardElement.querySelector(".card__img").alt = initialCards.name;
+
+  likeBtn.addEventListener("click", function(evt){
+    evt.target.classList.toggle("card__like-button_active");
+  })
+
+  deleteButton.addEventListener("click", function(){
+    deleteButton.closest(".card").remove();
+  })
+
+  card.addEventListener(".click", function(){
+    popupImg.classList.toggle("popup_opened");
+    img.alt = document.querySelector(".card__img").alt;
+    img.src = document.querySelector(".card__img").src;
+    imgTitle.textContent = document.querySelector(".card__img").alt;
+  })
+
 
   cards.appendChild(cardElement);
 }
 
 renderCards()
+
+                                                              //Full screen img
+
+let popupImg = document.querySelector(".popup_fullscreen-picture");
+let img = document.querySelector(".popup__fullscreen-img");
+let imgTitle = document.querySelector(".popup__picture-title");
+let imgPopupClose = document.querySelector(".popup__close-button_img");
+
+
+imgPopupClose.addEventListener("click", popupImgOpenClose);
