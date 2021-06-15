@@ -107,7 +107,7 @@ function renderCard(initialCards){
   let cardElement = cardTemplate.cloneNode(true);
   let deleteButton = cardElement.querySelector(".card__trash-button");
   let likeBtn = cardElement.querySelector(".card__like-button");
-  let card = document.querySelector(".card");
+  let card = cardElement.querySelector(".card");
 
   cardElement.querySelector(".card__name").textContent = initialCards.name;
   cardElement.querySelector(".card__img").src = initialCards.link;
@@ -121,12 +121,7 @@ function renderCard(initialCards){
     deleteButton.closest(".card").remove();
   })
 
-  card.addEventListener(".click", function(){
-    popupImg.classList.toggle("popup_opened");
-    img.alt = document.querySelector(".card__img").alt;
-    img.src = document.querySelector(".card__img").src;
-    imgTitle.textContent = document.querySelector(".card__img").alt;
-  })
+  card.addEventListener("click", popupImgOpenClose)
 
 
   cards.appendChild(cardElement);
@@ -142,4 +137,10 @@ let imgTitle = document.querySelector(".popup__picture-title");
 let imgPopupClose = document.querySelector(".popup__close-button_img");
 
 
+function popupImgOpenClose(){
+  popupImg.classList.toggle("popup_opened");
+  img.alt = document.querySelector(".card__img").alt;
+  img.src = document.querySelector(".card__img").src;
+  imgTitle.textContent = document.querySelector(".card__img").alt;
+}
 imgPopupClose.addEventListener("click", popupImgOpenClose);
