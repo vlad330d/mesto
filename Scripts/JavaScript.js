@@ -56,17 +56,14 @@ function popupAddOpenClose (){
 
 function addFormSubmitHandler(evt) {
   evt.preventDefault();
+  let newCard = {
+    name: addCardName.value,
+    link: addCardImg.value,
+  }
   renderCard(newCard);
   popupAddOpenClose();
+  addFormElement.reset();
 }
-
-let newCard = [
-  {
-  name: addCardName.textContent,
-  link: addCardImg.textContent
-}
-]
-
 
 popupAddOpen.addEventListener("click", popupAddOpenClose);
 popupAddClose.addEventListener("click", popupAddOpenClose);
@@ -130,6 +127,7 @@ function renderCard(initialCards){
   cardImg.addEventListener("click", popupImgOpenClose)
 
   cards.appendChild(cardElement);
+
 }
 
 renderCards()
