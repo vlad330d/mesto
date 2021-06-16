@@ -1,0 +1,7 @@
+.popup__container_fullscreen-picture {
+  width: auto;
+  max-width: none;
+  height: auto;
+  background: none;
+  border-radius: 0;
+}

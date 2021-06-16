@@ -9,3 +9,9 @@
 .popup__input:last-of-type {
   margin: 0 auto;
 }
+
+.popup__input::placeholder {
+  font-size: 14px;
+  line-height: 17px;
+  color: #C4C4C4;
+}
