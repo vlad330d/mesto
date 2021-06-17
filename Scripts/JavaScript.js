@@ -124,7 +124,7 @@ function renderCard(initialCards){
     deleteButton.closest(".card").remove();
   })
 
-  cardImg.addEventListener("click", popupImgOpenClose)
+  cardImg.addEventListener("click", popupImgOpen)
 
   cards.appendChild(cardElement);
 
@@ -140,11 +140,15 @@ let imgTitle = document.querySelector(".popup__picture-title");
 let imgPopupClose = document.querySelector(".popup__close-button_img");
 
 
-function popupImgOpenClose(evt){
-  popupImg.classList.toggle("popup_opened");
+function popupImgOpen(evt){
+  popupImg.classList.add("popup_opened");
   img.alt = evt.target.closest(".card__img").alt;
   img.src = evt.target.closest(".card__img").src;
   imgTitle.textContent = evt.target.closest(".card__img").alt;
 }
 
-imgPopupClose.addEventListener("click", popupImgOpenClose);
+function popupImgClose(){
+  popupImg.classList.remove("popup_opened");
+}
+
+imgPopupClose.addEventListener("click", popupImgClose);
