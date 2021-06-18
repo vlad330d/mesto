@@ -58,7 +58,7 @@ function addFormSubmitHandler(evt) {
     name: addCardName.value,
     link: addCardImg.value,
   }
-  renderCard(newCard);
+  createNewCard(newCard);
   closePopup(popupAddForm);
   addFormElement.reset();
 }
@@ -102,10 +102,6 @@ const initialCards = [
 const cardTemplate = document.querySelector(".card-template").content;
 const cards = document.querySelector(".cards");
 
-function renderCards(){
-  initialCards.forEach(renderCard);
-}
-
 function renderCard(initialCard){
   const cardElement = cardTemplate.cloneNode(true);
   const deleteButton = cardElement.querySelector(".card__trash-button");
@@ -126,8 +122,17 @@ function renderCard(initialCard){
 
   cardImg.addEventListener("click", () => openImgPopup(initialCard.link, initialCard.name));
 
-  cards.prepend(cardElement);
+  return cardElement;
 }
+
+function createNewCard(cardElement) {
+  cards.prepend(renderCard(cardElement));
+} 
+
+function renderCards(){
+  initialCards.forEach(createNewCard);
+}
+
 
 renderCards()
 
