@@ -106,15 +106,15 @@ function renderCards(){
   initialCards.forEach(renderCard);
 }
 
-function renderCard(initialCards){
+function renderCard(initialCard){
   const cardElement = cardTemplate.cloneNode(true);
   const deleteButton = cardElement.querySelector(".card__trash-button");
   const likeBtn = cardElement.querySelector(".card__like-button");
   const cardImg = cardElement.querySelector(".card__img");
 
-  cardElement.querySelector(".card__name").textContent = initialCards.name;
-  cardElement.querySelector(".card__img").src = initialCards.link;
-  cardElement.querySelector(".card__img").alt = initialCards.name;
+  cardElement.querySelector(".card__name").textContent = initialCard.name;
+  cardElement.querySelector(".card__img").src = initialCard.link;
+  cardElement.querySelector(".card__img").alt = initialCard.name;
 
   likeBtn.addEventListener("click", function(evt){
     evt.target.classList.toggle("card__like-button_active");
@@ -124,26 +124,29 @@ function renderCard(initialCards){
     deleteButton.closest(".card").remove();
   })
 
-  cardImg.addEventListener("click", popupImgOpen)
+  cardImg.addEventListener("click", () => openImgPopup(initialCard.link, initialCard.name));
 
-  cards.appendChild(cardElement);
-
+  cards.prepend(cardElement);
 }
 
 renderCards()
 
-                                                              //Full screen img
+                                                                              //cards
+
+                                                                              //Full screen img
 
 const popupImg = document.querySelector(".popup_fullscreen-picture");
 const img = document.querySelector(".popup__fullscreen-img");
 const imgTitle = document.querySelector(".popup__picture-title");
 const imgPopupClose = document.querySelector(".popup__close-button_img");
 
-function popupImgOpen(evt){
+const openImgPopup = (link, title) => {
+  img.alt = title;
+  img.src = link;
+  imgTitle.textContent = title;
   openPopup(popupImg);
-  img.alt = evt.target.closest(".card__img").alt;
-  img.src = evt.target.closest(".card__img").src;
-  imgTitle.textContent = evt.target.closest(".card__img").alt;
 }
 
 imgPopupClose.addEventListener("click", () => closePopup(popupImg));
+
+                                                                              //Full screen img
