@@ -9,15 +9,16 @@ const popupName = document.querySelector(".popup__input_name");
 const popupProfession = document.querySelector(".popup__input_profession");
 
                                                                             //open and close Function
-
+/* сделал mousedown вместо click на closePopupByOverlayClick потому как заметил такую вещь когда нажимешь в форме чтобы выделить текст 
+    и отпускаешь мышь с выделиным текстом за формой то она закрывается хотя этого бы пользователь точно не хотел 🧐🧐  */
 function openPopup(popup) {
-  popup.addEventListener("click", closePopupByOverlayClick)
+  popup.addEventListener("mousedown", closePopupByOverlayClick)
   document.addEventListener("keydown", closePopupByEsc)
   popup.classList.add("popup_opened");
 }
 
 function closePopup(popup) {
-  popup.removeEventListener("click", closePopupByOverlayClick)
+  popup.removeEventListener("mousedown", closePopupByOverlayClick)
   document.removeEventListener("keydown", closePopupByEsc)
   popup.classList.remove("popup_opened");
 }
