@@ -11,11 +11,32 @@ const popupProfession = document.querySelector(".popup__input_profession");
                                                                             //open and close Function
 
 function openPopup(popup) {
+  popup.addEventListener("click", closePopupByOverlayClick)
+  document.addEventListener("keydown", closePopupByEsc)
   popup.classList.add("popup_opened");
 }
 
 function closePopup(popup) {
+  popup.removeEventListener("click", closePopupByOverlayClick)
+  document.removeEventListener("keydown", closePopupByEsc)
   popup.classList.remove("popup_opened");
+}
+
+function closePopupByOverlayClick (evt) {
+  if (evt.target === evt.currentTarget){
+    closeCurrentPopup()
+  }
+}
+
+function closePopupByEsc (evt) {
+  if (evt.key === "Escape"){
+    closeCurrentPopup();
+  }
+}
+
+function closeCurrentPopup(){
+  const opendPopup = document.querySelector(".popup_opened");
+  closePopup(opendPopup)
 }
 
                                                                             //open and close Function
