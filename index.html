@@ -28,24 +28,40 @@
       <section class="cards">
         
       </section>
+
+
+
+
+
+
       <section class="popup popup_edit">
-        <form name="user-form" class="popup__container popup__container_edit">
+        <form name="user-form" class="popup__container popup__container_edit" novalidate>
           <button type="button" class="popup__close-button popup__close-button_edit" aria-label="закртыть попап"></button>
           <h2 class="popup__title">Редактировать профиль</h2>
-          <input type="text" name="user-name" class="popup__input popup__input_name">
-          <input type="text" name="user-profession" class="popup__input popup__input_profession">
-          <button type="submit" class="popup__save-button">Сохранить</button>
+          <input type="text" name="user-name" placeholder="Имя" class="popup__input popup__input_name" required minlength="2" maxlength="40">
+          <input type="text" name="user-profession" placeholder="Род деятельности" class="popup__input popup__input_profession" required minlength="2" maxlength="200">
+          <button type="submit" class="popup__save-button popup__save-button_inactive">Сохранить</button>
         </form>
       </section>
       <section class="popup popup_add">
-        <form name="card-form" class="popup__container popup__container_add">
+        <form name="card-form" class="popup__container popup__container_add" >
           <button type="button" class="popup__close-button popup__close-button_add" aria-label="закртыть попап"></button>
           <h2 class="popup__title">Новое место</h2>
-          <input type="text" name="card-name" placeholder="Название" class="popup__input popup__input_card-name">
-          <input type="text" name="card-link" placeholder="Ссылка на картинку" class="popup__input popup__input_card-link">
+          <input type="text" name="card-name" placeholder="Название" class="popup__input popup__input_card-name" required minlength="2" maxlength="30">
+          <input type="text" name="card-link" placeholder="Ссылка на картинку" class="popup__input popup__input_card-link" type="url" required>
           <button type="submit" class="popup__save-button">Создать</button>
         </form>
       </section>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
       <section class="popup popup_fullscreen-picture">
         <div class="popup__container popup__container_fullscreen-picture">
           <button type="button" class="popup__close-button popup__close-button_img" aria-label="закртыть попап"></button>
