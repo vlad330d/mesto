@@ -2,7 +2,7 @@ const showInputError = (formElement, inputElement, errorMessage) => {
   const formError = formElement.querySelector(`.${inputElement.id}-error`);
 
   inputElement.classList.add("popup__input_error");
-  formError.classList.add("popup__input_error-message-active");
+  formError.classList.add("popup__input__error-message_active");
   formError.textContent = errorMessage;
 };
 
@@ -10,7 +10,7 @@ const hideInputError = (formElement, inputElement) => {
   const formError = formElement.querySelector(`.${inputElement.id}-error`);
 
   inputElement.classList.remove("popup__input_error");
-  formError.classList.remove("popup__input_error-message-active");
+  formError.classList.remove("popup__input__error-message_active");
   formError.textContent = ''
 };
 
