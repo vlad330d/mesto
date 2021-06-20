@@ -21,6 +21,7 @@ function closePopup(popup) {
   popup.removeEventListener("mousedown", closePopupByOverlayClick)
   document.removeEventListener("keydown", closePopupByEsc)
   popup.classList.remove("popup_opened");
+  addFormElement.reset();
 }
 
 function closePopupByOverlayClick (evt) {
@@ -82,7 +83,6 @@ function addFormSubmitHandler(evt) {
   }
   createNewCard(newCard);
   closePopup(popupAddForm);
-  addFormElement.reset();
 }
 
 popupAddOpen.addEventListener("click", () => openPopup(popupAddForm));

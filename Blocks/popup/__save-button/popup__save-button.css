@@ -14,12 +14,6 @@
   transition: ease 0.2s;
 }
 
-.popup__save-button_inactive {
-  background: #FFFFFF;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  color: rgba(0, 0, 0, 0.2);
-}
-
 @media screen and (max-width: 400px) {
   .popup__save-button{
     font-size: 14px;

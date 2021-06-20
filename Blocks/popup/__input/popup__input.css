@@ -11,31 +11,3 @@
   line-height: 17px;
   color: #C4C4C4;
 }
-
-.popup__form-field {
-  position: relative;
-  margin: 54px auto 30px;
-  width: 85%;
-  max-width: 358px;
-}
-
-.popup__form-field:last-of-type {
-  margin: 0 auto 40px;
-}
-
-.popup__input_error {
-  border-bottom: 1px solid #FF0000;
-}
-
-.popup__input_error-message {
-  position: absolute;
-  padding-top: 5px;
-  font-size: 12px;
-  line-height: 15px;
-  color: #FF0000;
-  opacity: 0;
-}
-
-.popup__input_error-message-active{
-  opacity: 1;
-}
