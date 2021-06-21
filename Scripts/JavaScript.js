@@ -99,6 +99,7 @@ const popupAddClose = document.querySelector(".popup__close-button_add");
 const addFormElement = document.querySelector(".popup__container_add");
 const addCardName = document.querySelector(".popup__input_card-name")
 const addCardImg = document.querySelector(".popup__input_card-link")
+const addFormSaveBtn =document.querySelector(".popup__save-button_add-form")
 
 function addFormSubmitHandler(evt) {
   evt.preventDefault();
@@ -106,9 +107,15 @@ function addFormSubmitHandler(evt) {
     name: addCardName.value,
     link: addCardImg.value,
   }
-  createNewCard(newCard);
+  renderCard(newCard);
   addFormElement.reset();
   closePopup(popupAddForm);
+  disableSubmitButton(addFormSaveBtn)
+}
+
+function disableSubmitButton(button) {
+  button.classList.add("popup__save-button_inactive");
+  button.setAttribute("disabled", "disabled");
 }
 
 function addFormReset () {
@@ -128,7 +135,7 @@ addFormElement.addEventListener("submit", addFormSubmitHandler);
 const cardTemplate = document.querySelector(".card-template").content;
 const cards = document.querySelector(".cards");
 
-function renderCard(initialCard){
+function createNewCard(initialCard){
   const cardElement = cardTemplate.cloneNode(true);
   const deleteButton = cardElement.querySelector(".card__trash-button");
   const likeBtn = cardElement.querySelector(".card__like-button");
@@ -151,14 +158,13 @@ function renderCard(initialCard){
   return cardElement;
 }
 
-function createNewCard(cardElement) {
-  cards.prepend(renderCard(cardElement));
+function renderCard(cardElement) {
+  cards.prepend(createNewCard(cardElement));
 } 
 
 function renderCards(){
-  initialCards.forEach(createNewCard);
+  initialCards.forEach(renderCard); 
 }
-
 
 renderCards()
 
