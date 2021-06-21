@@ -1,4 +1,31 @@
-const popup = document.querySelector(".popup");
+const initialCards = [
+  {
+    name: 'Архыз',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+  },
+  {
+    name: 'Челябинская область',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+  },
+  {
+    name: 'Иваново',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+  },
+  {
+    name: 'Камчатка',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+  },
+  {
+    name: 'Холмогорский район',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+  },
+  {
+    name: 'Байкал',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+  },
+]; 
+
+
 const popupEditForm = document.querySelector(".popup_edit")
 const popupEditOpen = document.querySelector(".user__edit-button");
 const popupEditClose = document.querySelector(".popup__close-button_edit");
@@ -7,10 +34,10 @@ const profession = document.querySelector(".user__profession");
 const editFormElement = document.querySelector(".popup__container_edit");
 const popupName = document.querySelector(".popup__input_name");
 const popupProfession = document.querySelector(".popup__input_profession");
+const esc = "Escape"
 
                                                                             //open and close Function
-/* сделал mousedown вместо click на closePopupByOverlayClick потому как заметил такую вещь когда нажимешь в форме чтобы выделить текст 
-    и отпускаешь мышь с выделиным текстом за формой то она закрывается хотя этого бы пользователь точно не хотел 🧐🧐  */
+
 function openPopup(popup) {
   popup.addEventListener("mousedown", closePopupByOverlayClick)
   document.addEventListener("keydown", closePopupByEsc)
@@ -21,7 +48,6 @@ function closePopup(popup) {
   popup.removeEventListener("mousedown", closePopupByOverlayClick)
   document.removeEventListener("keydown", closePopupByEsc)
   popup.classList.remove("popup_opened");
-  addFormElement.reset();
 }
 
 function closePopupByOverlayClick (evt) {
@@ -31,7 +57,7 @@ function closePopupByOverlayClick (evt) {
 }
 
 function closePopupByEsc (evt) {
-  if (evt.key === "Escape"){
+  if (evt.key === esc){
     closeCurrentPopup();
   }
 }
@@ -67,7 +93,6 @@ editFormElement.addEventListener("submit", editFormSubmitHandler);
 
                                                                              //Add Form
 
-
 const popupAddOpen = document.querySelector(".user__add-button");
 const popupAddForm = document.querySelector(".popup_add");
 const popupAddClose = document.querySelector(".popup__close-button_add");
@@ -77,49 +102,28 @@ const addCardImg = document.querySelector(".popup__input_card-link")
 
 function addFormSubmitHandler(evt) {
   evt.preventDefault();
-  let newCard = {
+  const newCard = {
     name: addCardName.value,
     link: addCardImg.value,
   }
   createNewCard(newCard);
+  addFormElement.reset();
   closePopup(popupAddForm);
 }
 
+function addFormReset () {
+  closePopup(popupAddForm)
+  addFormElement.reset();
+}
+
+
 popupAddOpen.addEventListener("click", () => openPopup(popupAddForm));
-popupAddClose.addEventListener("click", () => closePopup(popupAddForm));
+popupAddClose.addEventListener("click", () => addFormReset());
 addFormElement.addEventListener("submit", addFormSubmitHandler);
 
                                                                              //Add Form
                                                                             
                                                                               //cards
-
-const initialCards = [
-  {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-  },
-  {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-  },
-  {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-  },
-  {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-  },
-  {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  },
-]; 
-
 
 const cardTemplate = document.querySelector(".card-template").content;
 const cards = document.querySelector(".cards");
@@ -131,8 +135,8 @@ function renderCard(initialCard){
   const cardImg = cardElement.querySelector(".card__img");
 
   cardElement.querySelector(".card__name").textContent = initialCard.name;
-  cardElement.querySelector(".card__img").src = initialCard.link;
-  cardElement.querySelector(".card__img").alt = initialCard.name;
+  cardImg.src = initialCard.link;
+  cardImg.alt = initialCard.name;
 
   likeBtn.addEventListener("click", function(evt){
     evt.target.classList.toggle("card__like-button_active");
