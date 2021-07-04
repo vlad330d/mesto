@@ -1,3 +1,6 @@
+import Card from "./Card";
+
+
 const initialCards = [
   {
     name: 'Архыз',
@@ -99,7 +102,7 @@ const popupAddClose = document.querySelector(".popup__close-button_add");
 const addFormElement = document.querySelector(".popup__container_add");
 const addCardName = document.querySelector(".popup__input_card-name")
 const addCardImg = document.querySelector(".popup__input_card-link")
-const addFormSaveBtn =document.querySelector(".popup__save-button_add-form")
+const addFormSaveBtn = document.querySelector(".popup__save-button_add-form")
 
 function addFormSubmitHandler(evt) {
   evt.preventDefault();
@@ -132,42 +135,6 @@ addFormElement.addEventListener("submit", addFormSubmitHandler);
                                                                             
                                                                               //cards
 
-const cardTemplate = document.querySelector(".card-template").content;
-const cards = document.querySelector(".cards");
-
-function createNewCard(initialCard){
-  const cardElement = cardTemplate.cloneNode(true);
-  const deleteButton = cardElement.querySelector(".card__trash-button");
-  const likeBtn = cardElement.querySelector(".card__like-button");
-  const cardImg = cardElement.querySelector(".card__img");
-
-  cardElement.querySelector(".card__name").textContent = initialCard.name;
-  cardImg.src = initialCard.link;
-  cardImg.alt = initialCard.name;
-
-  likeBtn.addEventListener("click", function(evt){
-    evt.target.classList.toggle("card__like-button_active");
-  })
-
-  deleteButton.addEventListener("click", function(){
-    deleteButton.closest(".card").remove();
-  })
-
-  cardImg.addEventListener("click", () => openImgPopup(initialCard.link, initialCard.name));
-
-  return cardElement;
-}
-
-function renderCard(cardElement) {
-  cards.prepend(createNewCard(cardElement));
-} 
-
-function renderCards(){
-  initialCards.forEach(renderCard); 
-}
-
-renderCards()
-
                                                                               //cards
 
                                                                               //Full screen img
@@ -187,3 +154,12 @@ const openImgPopup = (link, title) => {
 imgPopupClose.addEventListener("click", () => closePopup(popupImg));
 
                                                                               //Full screen img
+
+
+
+initialCards.forEach((item) => {
+  const card = new Card(item, ".card-template");
+  const cardElement = card.renderCard();
+
+  document.querySelector(".cards").prepend(cardElement);
+});
