@@ -3,7 +3,7 @@ export default class Card {
         this._text = data.name;
         this._img = data.link;
     }
-
+    
     _getTemplate(){
         const cardElement = document.querySelector(".card-template").content.querySelector(".card").cloneNode(true);
 
