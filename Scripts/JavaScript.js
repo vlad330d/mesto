@@ -106,11 +106,11 @@ const addFormSaveBtn = document.querySelector(".popup__save-button_add-form")
 
 function addFormSubmitHandler(evt) {
   evt.preventDefault();
-  const newCard = {
+  const createdCard = {
     name: addCardName.value,
     link: addCardImg.value,
   }
-  renderCard(newCard);
+  renderCard(createdCard);
   addFormElement.reset();
   closePopup(popupAddForm);
   disableSubmitButton(addFormSaveBtn)
@@ -157,9 +157,11 @@ imgPopupClose.addEventListener("click", () => closePopup(popupImg));
 
 
 
-initialCards.forEach((item) => {
-  const card = new Card(item, ".card-template");
-  const cardElement = card.renderCard();
-
-  document.querySelector(".cards").prepend(cardElement);
+initialCards.forEach((card) => {
+  const newcard = new Card(card).generateCard();
+  renderCard(newcard);
 });
+
+function renderCard(card){
+  document.querySelector(".cards").prepend(card);
+}
