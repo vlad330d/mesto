@@ -110,7 +110,10 @@ function addFormSubmitHandler(evt) {
     name: addCardName.value,
     link: addCardImg.value,
   }
-  renderCard(createdCard);
+
+  const addCard = new Card(createdCard, ".card-template").generateCard();
+  renderCard(addCard);
+  
   addFormElement.reset();
   closePopup(popupAddForm);
   disableSubmitButton(addFormSaveBtn)
@@ -158,7 +161,7 @@ imgPopupClose.addEventListener("click", () => closePopup(popupImg));
 
 
 initialCards.forEach((card) => {
-  const newcard = new Card(card).generateCard();
+  const newcard = new Card(card, ".card-template", openImgPopup).generateCard();
   renderCard(newcard);
 });
 
