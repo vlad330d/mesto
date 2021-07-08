@@ -111,7 +111,7 @@ function addFormSubmitHandler(evt) {
     link: addCardImg.value,
   }
 
-  const addCard = new Card(createdCard, ".card-template").generateCard();
+  const addCard = new Card(createdCard, ".card-template", openImgPopup).generateCard();
   renderCard(addCard);
   
   addFormElement.reset();
