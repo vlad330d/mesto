@@ -1,3 +1,39 @@
+export default class FormValidator {
+  constructor()
+
+  _showInputError(){
+
+  }
+
+  _hideInputError(){
+
+  }
+
+  _isValid(){
+
+  }
+
+  _setEventListeners(){
+
+  }
+
+  _hasInvalidInput(){
+
+  }
+
+  _toggleButtonState(){
+
+  }
+
+  enableValidation(){
+    
+  }
+}
+
+
+
+
+
 const showInputError = (formElement, inputElement, errorMessage, config) => {
   const formError = formElement.querySelector(`.${inputElement.id}-error`);
 
