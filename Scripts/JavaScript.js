@@ -1,4 +1,6 @@
 import Card from "./Card.js";
+import FormValidator from "./FormValidator.js";
+import { config } from "./FormValidator.js";
 
 
 const initialCards = [
@@ -116,7 +118,6 @@ function addFormSubmitHandler(evt) {
   
   addFormElement.reset();
   closePopup(popupAddForm);
-  disableSubmitButton(addFormSaveBtn)
 }
 
 function disableSubmitButton(button) {
@@ -129,7 +130,7 @@ function addFormReset () {
   addFormElement.reset();
 }
 
-
+popupAddOpen.addEventListener("click", () => disableSubmitButton(addFormSaveBtn));
 popupAddOpen.addEventListener("click", () => openPopup(popupAddForm));
 popupAddClose.addEventListener("click", () => addFormReset());
 addFormElement.addEventListener("submit", addFormSubmitHandler);
@@ -168,3 +169,7 @@ initialCards.forEach((card) => {
 function renderCard(card){
   document.querySelector(".cards").prepend(card);
 }
+
+
+const validProfile = new FormValidator(config, popupEditForm).enableValidation();
+const validCard = new FormValidator(config, popupAddForm).enableValidation();
