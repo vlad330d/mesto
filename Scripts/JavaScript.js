@@ -98,11 +98,7 @@ function addFormSubmitHandler(evt) {
   
   addFormElement.reset();
   closePopup(popupAddForm);
-}
-
-function disableSubmitButton(button) {
-  button.classList.add("popup__save-button_inactive");
-  button.setAttribute("disabled", "disabled");
+  validCard.toggleButtonState();
 }
 
 function addFormReset () {
@@ -110,7 +106,6 @@ function addFormReset () {
   addFormElement.reset();
 }
 
-popupAddOpen.addEventListener("click", () => disableSubmitButton(addFormSaveBtn));
 popupAddOpen.addEventListener("click", () => openPopup(popupAddForm));
 popupAddClose.addEventListener("click", () => addFormReset());
 addFormElement.addEventListener("submit", addFormSubmitHandler);
