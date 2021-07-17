@@ -94,7 +94,7 @@ function addFormSubmitHandler(evt) {
     link: addCardImg.value,
   }
 
-  newCard(createdCard)
+  renderCard(createCard(createdCard));
   
   addFormElement.reset();
   closePopup(popupAddForm);
@@ -136,13 +136,14 @@ imgPopupClose.addEventListener("click", () => closePopup(popupImg));
 
 const cards = document.querySelector(".cards")
 
-function newCard(card) {
-  const newcard = new Card(card, ".card-template", openImgPopup).generateCard();
-  renderCard(newcard);
+function createCard(card) {
+  const newcard = new Card(card, ".card-template", openImgPopup);
+  
+  return newcard.generateCard()
 }
 
 initialCards.forEach((card) => {
-  newCard(card)
+  renderCard(createCard(card));
 });
 
 function renderCard(card){
