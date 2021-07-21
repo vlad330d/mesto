@@ -1,5 +1,7 @@
-Проект: Место
+2nd Project: Place
+
+In this project, I strengthened knowledge of using HTML and CSS, made this site responsive for different screen sizes, and also learned how to work with JavaScript to make the site more interactive and intuitive for the user.
+
+(upcoming updates, make a WEBpack of this project and conect it to API)
 
 https://vlad330d.github.io/mesto/
-
-в данной проэктной работе мы укрепляли знания верстки с помощью HTML/CSS, делали данный сайт адаптивным для разных размеров экранов, так же обучались работе с JavaScript чтобы сделать сайт более интерактивным и интуитивно понятным для пользователя.
